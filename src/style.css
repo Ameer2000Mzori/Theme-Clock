@@ -47,7 +47,6 @@ body {
 .header .head-Wrap .clock-Wrapper {
   position: relative;
   height: 50%;
-  background-color: rgb(165, 163, 163);
 }
 
 .header .head-Wrap .clock-Wrapper .hr-Bar {
@@ -104,4 +103,43 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.header .head-Wrap .date-Time-Wrap {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40%;
+}
+
+.header .head-Wrap .date-Time-Wrap h1 {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 50px;
+  height: 45px;
+}
+
+.header .head-Wrap .date-Time-Wrap hr {
+  height: 5px;
+  border: none;
+  border-bottom: solid;
+  width: 30%;
+}
+
+.header .head-Wrap .date-Time-Wrap h4 {
+  padding: 0;
+  margin: 0;
+  color: gray;
+  display: flex;
+  font-weight: 300;
+  font-size: 15px;
+  height: 25px;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
 }
