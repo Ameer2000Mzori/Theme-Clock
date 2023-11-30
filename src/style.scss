@@ -103,6 +103,15 @@ body {
       }
     }
 
+    .times {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      align-items: center;
+      gap: 15px;
+      justify-content: space-evenly;
+    }
+
     .date-Time-Wrap {
       display: flex;
       flex-direction: column;
@@ -133,12 +142,25 @@ body {
         color: gray;
         display: flex;
         font-weight: 300;
-        font-size: 15px;
+        font-size: 20px;
         height: 25px;
         flex-direction: row;
         text-align: center;
         align-items: center;
         gap: 10px;
+      }
+
+      .day-El {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: black;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        color: white;
       }
     }
   }
