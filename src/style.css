@@ -5,3 +5,41 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.header .head-Wrap {
+  height: 60%;
+  width: 70%;
+}
+
+.header .head-Wrap .button-Wrap {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 10%;
+}
+
+.header .head-Wrap .button-Wrap .dark-Light-Btn {
+  font-family: inherit;
+  background-color: black;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.header .head-Wrap .button-Wrap .dark-Light-Btn:hover {
+  border-style: solid;
+  border-color: bisque;
+  border-width: 1px;
+}
