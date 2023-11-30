@@ -41,5 +41,67 @@ body {
 .header .head-Wrap .button-Wrap .dark-Light-Btn:hover {
   border-style: solid;
   border-color: bisque;
-  border-width: 1px;
+  border-width: 3px;
+}
+
+.header .head-Wrap .clock-Wrapper {
+  position: relative;
+  height: 50%;
+  background-color: rgb(165, 163, 163);
+}
+
+.header .head-Wrap .clock-Wrapper .hr-Bar {
+  position: absolute;
+  width: 3px;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%) rotate(-140deg);
+  height: 50%;
+  transform-origin: top center;
+}
+
+.header .head-Wrap .clock-Wrapper .min-Bar {
+  position: absolute;
+  width: 3px;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%) rotate(-130deg);
+  height: 40%;
+  transform-origin: top center;
+}
+
+.header .head-Wrap .clock-Wrapper .sec-Bar {
+  position: absolute;
+  width: 3px;
+  background-color: rgb(255, 0, 0);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%) rotate(-150deg);
+  height: 45%;
+  transform-origin: top center;
+}
+
+.header .head-Wrap .clock-Wrapper .middle-Dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: rgb(116, 113, 113);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header .head-Wrap .clock-Wrapper .middle-Dot::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
