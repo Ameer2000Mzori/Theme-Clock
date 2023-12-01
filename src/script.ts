@@ -163,6 +163,7 @@ const changeTheme = (): any => {
     minuteEl.style.backgroundColor = "white";
     toggleBtn.style.backgroundColor = "white";
     toggleBtn.style.color = "black";
+    toggleBtn.textContent = "Light Mode";
     dayEl.style.backgroundColor = "white";
     dayEl.style.color = "black";
     timeEl.style.color = "white";
@@ -173,6 +174,7 @@ const changeTheme = (): any => {
     minuteEl.style.backgroundColor = "black";
     toggleBtn.style.backgroundColor = "black";
     toggleBtn.style.color = "white";
+    toggleBtn.textContent = "Dark Mode";
     dayEl.style.backgroundColor = "black";
     dayEl.style.color = "white";
     timeEl.style.color = "black";
