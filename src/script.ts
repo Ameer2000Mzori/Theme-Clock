@@ -9,6 +9,7 @@ const toggleBtn = document.getElementsByClassName(
   "dark-Light-Btn"
 )[0] as HTMLElement;
 
+toggleBtn.textContent = "Light Mode";
 // here is our functions
 const clock = () => {
   // getting date from Date mathod

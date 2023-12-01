@@ -6,6 +6,7 @@ var timeEl = document.getElementsByClassName("time-El")[0];
 var dateEl = document.getElementsByClassName("date-El")[0];
 var dayEl = document.getElementsByClassName("day-El")[0];
 var toggleBtn = document.getElementsByClassName("dark-Light-Btn")[0];
+toggleBtn.textContent = "Light Mode";
 // here is our functions
 var clock = function () {
     // getting date from Date mathod
