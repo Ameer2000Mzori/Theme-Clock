@@ -17,6 +17,8 @@ const clock = () => {
   const day = date.getDate();
   const hour = date.getHours() % 12 || 12;
   var minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+
   const dayNumber: number = date.getDay();
   let dayName: string;
   // i could do this in object but used this mothed for practsing purposes
@@ -92,19 +94,49 @@ const clock = () => {
   }
 
   // if else lader
-
   if (minutes > 9) {
     timeEl.textContent = `${hour} : ${minutes}`;
   } else {
     timeEl.textContent = `${hour} : 0${minutes}`;
   }
 
+  // our clock functions rotateion
+  hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+    hour,
+    0,
+    11,
+    0,
+    360
+  )}deg)`;
+
+  console.log(seconds);
+  secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+    seconds,
+    0,
+    59,
+    0,
+    360
+  )}deg)`;
+
+  // setting the dates dynamclly
   console.log(dayName);
   dayEl.textContent = `${day}`;
   dateEl.textContent = `${dayName}, ${monthName}`;
 };
 
+const scale = (
+  num: any,
+  in_min: any,
+  in_max: any,
+  out_min: any,
+  out_max: any
+) => {
+  return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+};
+
 clock();
+
+// our scale function :
 
 // here is our eventlisnters
 setInterval(clock, 1000);

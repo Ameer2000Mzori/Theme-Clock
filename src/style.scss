@@ -52,9 +52,9 @@ body {
         background-color: black;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -0%) rotate(-140deg);
+        // transform: translate(-50%, -0%) rotate(-140deg);
         height: 50%;
-        transform-origin: top center; // Adjusted transform-origin
+        transform-origin: bottom center; // Adjusted transform-origin
       }
 
       .min-Bar {
@@ -63,9 +63,9 @@ body {
         background-color: black;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -0%) rotate(-130deg);
+        // transform: translate(-50%, -0%) rotate(-130deg);
         height: 40%;
-        transform-origin: top center; // Adjusted transform-origin
+        transform-origin: bottom center; // Adjusted transform-origin
       }
 
       .sec-Bar {
@@ -74,9 +74,9 @@ body {
         background-color: rgb(255, 0, 0);
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -0%) rotate(-150deg);
+        // transform: translate(-50%, -0%) rotate(-150deg);
         height: 45%;
-        transform-origin: top center; // Adjusted transform-origin
+        transform-origin: bottom center; // Adjusted transform-origin
       }
 
       .middle-Dot {

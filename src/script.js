@@ -13,6 +13,7 @@ var clock = function () {
     var day = date.getDate();
     var hour = date.getHours() % 12 || 12;
     var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
     var dayNumber = date.getDay();
     var dayName;
     // i could do this in object but used this mothed for practsing purposes
@@ -91,10 +92,19 @@ var clock = function () {
     else {
         timeEl.textContent = "".concat(hour, " : 0").concat(minutes);
     }
+    // our clock functions rotateion
+    hourEl.style.transform = "translate(-50%, -100%) rotate(".concat(scale(hour, 0, 11, 0, 360), "deg)");
+    console.log(seconds);
+    secondEl.style.transform = "translate(-50%, -100%) rotate(".concat(scale(seconds, 0, 59, 0, 360), "deg)");
+    // setting the dates dynamclly
     console.log(dayName);
     dayEl.textContent = "".concat(day);
     dateEl.textContent = "".concat(dayName, ", ").concat(monthName);
 };
+var scale = function (num, in_min, in_max, out_min, out_max) {
+    return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+};
 clock();
+// our scale function :
 // here is our eventlisnters
 setInterval(clock, 1000);
