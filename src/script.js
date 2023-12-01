@@ -103,11 +103,42 @@ var clock = function () {
     // setting the dates dynamclly
     dayEl.textContent = "".concat(day);
     dateEl.textContent = "".concat(dayName, ", ").concat(monthName);
-    console.log(hour, minutes, seconds);
+    // this is test console.log
+    // console.log(hour, minutes, seconds);
 };
 // our scale function
 var scale = function (num, in_min, in_max, out_min, out_max) {
     return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 };
+// our change theme function
+var changeTheme = function () {
+    var body = document.querySelector("body");
+    var hr = document.querySelector("hr");
+    if (body.style.backgroundColor === "white" ||
+        body.style.backgroundColor === "") {
+        body.style.backgroundColor = "black";
+        hourEl.style.backgroundColor = "white";
+        minuteEl.style.backgroundColor = "white";
+        toggleBtn.style.backgroundColor = "white";
+        toggleBtn.style.color = "black";
+        dayEl.style.backgroundColor = "white";
+        dayEl.style.color = "black";
+        timeEl.style.color = "white";
+        hr.style.color = "white";
+    }
+    else {
+        body.style.backgroundColor = "white";
+        hourEl.style.backgroundColor = "black";
+        minuteEl.style.backgroundColor = "black";
+        toggleBtn.style.backgroundColor = "black";
+        toggleBtn.style.color = "white";
+        dayEl.style.backgroundColor = "black";
+        dayEl.style.color = "white";
+        timeEl.style.color = "black";
+        hr.style.color = "black";
+    }
+};
 // here is our eventlisnters each 1 second fire the function again
 setInterval(clock, 1000);
+// here is our change theme color btn
+toggleBtn.addEventListener("click", changeTheme);

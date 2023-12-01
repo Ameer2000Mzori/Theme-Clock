@@ -3,6 +3,7 @@
 body {
   font-family: "Poppins", sans-serif;
   padding: 0;
+  background-color: white;
   margin: 0;
 }
 
@@ -12,6 +13,7 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
+  background-color: var(white);
   height: 100vh;
 }
 
