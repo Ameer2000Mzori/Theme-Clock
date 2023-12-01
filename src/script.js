@@ -14,9 +14,10 @@ var clock = function () {
     var hour = date.getHours() % 12 || 12;
     var minutes = date.getMinutes();
     var seconds = date.getSeconds();
+    // i could do this in object but used this mothed for practsing purposes
+    // this case method is for days names
     var dayNumber = date.getDay();
     var dayName;
-    // i could do this in object but used this mothed for practsing purposes
     switch (dayNumber) {
         case 0:
             dayName = "Sunday";
@@ -42,7 +43,7 @@ var clock = function () {
         default:
             dayName = "Invalid day";
     }
-    // this case method is for month names
+    // this case method is for months names
     var monthNumber = date.getMonth();
     var monthName;
     switch (monthNumber) {
@@ -92,19 +93,21 @@ var clock = function () {
     else {
         timeEl.textContent = "".concat(hour, " : 0").concat(minutes);
     }
-    // our clock functions rotateion
+    // dynamiclly element changing rotation for hour, min, sec.
+    // our hours
     hourEl.style.transform = "translate(-50%, -100%) rotate(".concat(scale(hour, 0, 11, 0, 360), "deg)");
-    console.log(seconds);
+    // our mints
+    minuteEl.style.transform = "translate(-50%, -100%) rotate(".concat(scale(minutes, 0, 59, 0, 360), "deg)");
+    // our seconds
     secondEl.style.transform = "translate(-50%, -100%) rotate(".concat(scale(seconds, 0, 59, 0, 360), "deg)");
     // setting the dates dynamclly
-    console.log(dayName);
     dayEl.textContent = "".concat(day);
     dateEl.textContent = "".concat(dayName, ", ").concat(monthName);
+    console.log(hour, minutes, seconds);
 };
+// our scale function
 var scale = function (num, in_min, in_max, out_min, out_max) {
     return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 };
-clock();
-// our scale function :
-// here is our eventlisnters
+// here is our eventlisnters each 1 second fire the function again
 setInterval(clock, 1000);

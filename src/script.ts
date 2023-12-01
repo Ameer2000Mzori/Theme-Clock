@@ -13,15 +13,17 @@ const toggleBtn = document.getElementsByClassName(
 const clock = () => {
   // getting date from Date mathod
   const date = new Date();
-
   const day = date.getDate();
   const hour = date.getHours() % 12 || 12;
   var minutes = date.getMinutes();
   const seconds = date.getSeconds();
 
+  // i could do this in object but used this mothed for practsing purposes
+  // this case method is for days names
+
   const dayNumber: number = date.getDay();
   let dayName: string;
-  // i could do this in object but used this mothed for practsing purposes
+
   switch (dayNumber) {
     case 0:
       dayName = "Sunday";
@@ -48,7 +50,7 @@ const clock = () => {
       dayName = "Invalid day";
   }
 
-  // this case method is for month names
+  // this case method is for months names
   const monthNumber: number = date.getMonth();
   let monthName: string;
 
@@ -100,7 +102,9 @@ const clock = () => {
     timeEl.textContent = `${hour} : 0${minutes}`;
   }
 
-  // our clock functions rotateion
+  // dynamiclly element changing rotation for hour, min, sec.
+
+  // our hours
   hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
     hour,
     0,
@@ -109,7 +113,16 @@ const clock = () => {
     360
   )}deg)`;
 
-  console.log(seconds);
+  // our mints
+  minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+    minutes,
+    0,
+    59,
+    0,
+    360
+  )}deg)`;
+
+  // our seconds
   secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(
     seconds,
     0,
@@ -119,11 +132,13 @@ const clock = () => {
   )}deg)`;
 
   // setting the dates dynamclly
-  console.log(dayName);
   dayEl.textContent = `${day}`;
   dateEl.textContent = `${dayName}, ${monthName}`;
+
+  console.log(hour, minutes, seconds);
 };
 
+// our scale function
 const scale = (
   num: any,
   in_min: any,
@@ -134,9 +149,5 @@ const scale = (
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 };
 
-clock();
-
-// our scale function :
-
-// here is our eventlisnters
+// here is our eventlisnters each 1 second fire the function again
 setInterval(clock, 1000);
